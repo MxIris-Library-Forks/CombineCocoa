@@ -6,10 +6,10 @@
 //  Copyright © 2020 Combine Community. All rights reserved.
 //
 
-#if !(os(iOS) && (arch(i386) || arch(arm)))
+#if os(iOS)
 import Combine
 import Foundation
-import UIKit.UIControl
+import UIKit
 
 // MARK: - Publisher
 @available(iOS 13.0, *)

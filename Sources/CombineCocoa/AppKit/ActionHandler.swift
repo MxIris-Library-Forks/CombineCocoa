@@ -15,7 +15,7 @@ public extension NSControl {
       fileprivate var targetActions: [(NSControl, AnyObject, Selector, [NSEvent.EventType]?)] = []
     
         func allTargets() -> [AnyObject] {
-            return targetActions.compactMap({$0.1}).unique()
+            return targetActions.compactMap({$0.1}).uniqued()
         }
         
         func allActions(for target: AnyObject) -> [Selector] {
@@ -107,5 +107,21 @@ public extension NSControl {
       }
     }
   }
+
+internal extension NSEvent {
+    /**
+     The location of the event inside the specified view.
+     - Parameters view: The view for the location.
+     - Returns: The location of the event.
+     */
+    func location(in view: NSView) -> CGPoint {
+        return view.convert(locationInWindow, from: nil)
+    }
+    
+    /// The last event that the app retrieved from the event queue.
+    static var current: NSEvent? {
+        NSApplication.shared.currentEvent
+    }
+}
 
 #endif

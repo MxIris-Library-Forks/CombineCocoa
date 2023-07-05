@@ -95,4 +95,22 @@ public extension CombineExtension where Base: NSScrollView {
     
 }
 
+internal extension NSScrollView {
+    /**
+     The point at which the origin of the content view is offset from the origin of the scroll view.
+     
+     The default value is CGPointZero.
+     */
+    @objc dynamic var contentOffset: CGPoint {
+        get {
+            return documentVisibleRect.origin
+        }
+        set {
+            willChangeValue(for: \.contentOffset)
+            documentView?.scroll(newValue)
+            didChangeValue(for: \.contentOffset)
+        }
+    }
+}
+
 #endif
