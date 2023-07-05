@@ -1,6 +1,6 @@
 # CombineCocoa
 
-A fork of *CombineCocoa* that adds AppKit support.
+**A fork of *CombineCocoa* that adds AppKit support.**
 
 <p align="center">
 <img src="https://github.com/freak4pc/CombineCocoa/raw/main/Resources/logo.png" width="45%">
@@ -13,7 +13,7 @@ A fork of *CombineCocoa* that adds AppKit support.
 <img src="https://img.shields.io/badge/platforms-iOS%2013.0-333333.svg" />
 </p>
 
-CombineCocoa attempts to provide publishers for common UIKit controls so you can consume user interaction as Combine emissions and compose them into meaningful, logical publisher chains.
+CombineCocoa attempts to provide publishers for common AppKit and UIKit controls so you can consume user interaction as Combine emissions and compose them into meaningful, logical publisher chains.
 
 **Note**: This is still a primal version of this, with much more to be desired. I gladly accept PRs, ideas, opinions, or improvements. Thank you ! :)
 
