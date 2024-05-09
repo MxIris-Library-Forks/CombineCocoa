@@ -49,11 +49,11 @@ static NSMutableDictionary<NSValue *, NSSet<NSValue *> *> *allSelectors;
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation
 {
-    NSArray * _Nonnull arguments = unpackInvocation(anInvocation);
+    NSArray * _Nonnull arguments = __unpackInvocation(anInvocation);
     [self interceptedSelector:anInvocation.selector arguments:arguments];
 }
 
-NSArray * _Nonnull unpackInvocation(NSInvocation * _Nonnull invocation) {
+NSArray * _Nonnull __unpackInvocation(NSInvocation * _Nonnull invocation) {
     NSUInteger numberOfArguments = invocation.methodSignature.numberOfArguments;
     NSMutableArray *arguments = [NSMutableArray arrayWithCapacity:numberOfArguments - 2];
 
