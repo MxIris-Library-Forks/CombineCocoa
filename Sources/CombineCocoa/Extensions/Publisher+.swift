@@ -35,3 +35,10 @@ extension Publisher where Self.Failure == Never {
         assign(to: keyPath, on: object)
     }
 }
+
+
+extension Publisher {
+    public func receiveOnMainThread() -> Publishers.ReceiveOn<Self, DispatchQueue> {
+        receive(on: .main)
+    }
+}
